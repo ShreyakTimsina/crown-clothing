@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import HomePage from "./pages/homepage.content";
+import HomePage from "./pages/homepage/homepage.content";
 
-class App extends Component {
-  constructor() {
-    super();
-  }
+import ShopPage from "./pages/shop/shop.component";
+import { Route } from "react-router-dom";
 
-  render() {
-    return (
-      <div>
-        <HomePage />
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div>
+      <switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/shop" component={ShopPage} />
+      </switch>
+    </div>
+  );
 }
 
 export default App;
